@@ -27,15 +27,22 @@ body {
 }
 
 .zoom-text {
-  font-size: 4rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 10; 
+  padding-left: 40px;
+}
+
+.zoom-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-  transition: none;
-  z-index: 2;
-  color: #000000;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .zoom-image {
@@ -202,7 +209,7 @@ hr {
   margin: 100px auto;
 }
 
-.Keira {
+.promi {
   margin: 70px 0;
 }
 
@@ -312,5 +319,199 @@ h2 {
   .bilderreihefooter:hover,
   footer p:hover {
     transform: scale(1.08);
+  }
+  .bilderreihe {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.bilderreihe figure {
+  margin: 0;
+  text-align: center;
+}
+
+.bilderreihe img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.bilderreihe figcaption {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+  .bilderreihe figure:nth-child(3) img {
+  width: 130px;   /* gewünschte Breite */
+  height: auto;   /* Seitenverhältnis bleibt erhalten */
+  margin-top: 10px;
+
+}
+.bilderreihe figure:nth-child(3) figcaption {
+  font-weight: bold;      /* Fett */
+  margin-top: 20px;
+  width: 140px;
+}
+}
+
+@media (min-width: 1371px) {
+  .bild {
+    width: 600px;
+    max-width: 100%;
+    min-width: unset;
+    position: static;
+    left: unset;
+    right: unset;
+    transform: none;
+    margin: 40px auto;
+    display: block;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1371px) {
+  .Glasstuhl {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    text-align: left;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+  @media (min-width: 1371px) {
+  .Glasstuhl .bild {
+    width: 500px;
+    max-width: 800px;
+    min-width: 300px;
+    height: auto;
+    position: static !important;
+    left: 0 !important;
+    right: 50% !important;
+    transform: none !important;
+    object-fit: cover;
+    display: block;
+    margin-left: 0;
+  }
+}
+
+  @media (min-width: 1371px) {
+    .glasstuhl-text {
+      width: 600px;
+    }
+  }
+   @media (min-width: 1371px) {
+  .Marmorstuhl {
+    display: flex;
+    flex-direction: row-reverse; /* Bild rechts, Text links */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: left;
+  }
+  .Marmorstuhl .bild {
+    width: 500px;
+    max-width: 800px;
+    min-width: 300px;
+    height: auto;
+    margin: 0;
+    position: static;
+    left: unset;
+    right: unset;
+    transform: none;
+    object-fit: cover;
+    display: block;
+    margin-right: -80px;
+  }
+}
+ 
+  @media (min-width: 1371px) {
+  .marmorstuhl-text {
+    width: 600px;
+    margin-right: 200px;
+  }
+}
+
+@media (min-width: 1371px) {
+  .leder-perlen-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    margin: 80px auto;
+    width: 90%;
+    max-width: 1600px;
+    margin-top: 200px;
+  }
+  .Lederstuhl,
+  .Perlenstuhl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    min-width: 320px;
+    max-width: 500px;
+    text-align: center;
+  }
+  .Lederstuhl .bild,
+  .Perlenstuhl .bild {
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    height: auto;
+    margin: 0 0 24px 0;
+    display: block;
+    position: static;
+    left: unset;
+    right: unset;
+    transform: none;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1371px) {
+  .marmorstuhl-text,
+  .glasstuhl-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den Button */
+  }
+  .cta-marmorstuhl,
+  .cta-glasstuhl {
+    display: inline-block;
+    /* Kein margin: 0 auto; */
+    transform-origin: center;
+    transition: transform 0.2s;
+  }
+  .cta-marmorstuhl:hover,
+  .cta-glasstuhl:hover {
+    transform: scale(1.12);
+    transform-origin: center;
+  }
+}
+/* Tablet: optional, falls du Anpassungen möchtest */
+@media (max-width: 1024px) {
+  .zoom-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
+/* Smartphone: Bild füllt auch hier den Bildschirm */
+@media (max-width: 600px) {
+  .zoom-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
   }
 }
